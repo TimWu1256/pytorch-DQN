@@ -114,3 +114,6 @@ output/GridWorld*
 TRPO*
 *trpo*
 output/*trpo*
+
+#
+**/video/
