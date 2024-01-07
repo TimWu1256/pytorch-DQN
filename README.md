@@ -1,4 +1,4 @@
-# pytorch-madrl
+# pytorch-dqn
 
 This project includes PyTorch implementations of Deep Q-Network algorithm for single agent.
 
