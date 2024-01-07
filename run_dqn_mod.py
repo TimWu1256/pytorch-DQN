@@ -35,7 +35,7 @@ RANDOM_SEED = 2023
 
 VERSION = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-OUT_PATH = Path(r'./output/dqn') / VERSION
+OUT_PATH = Path(r'./output') / VERSION
 MODEL_PATH = OUT_PATH / 'model'
 LOG_PATH = OUT_PATH / 'log'
 CHART_PATH = OUT_PATH / 'chart'

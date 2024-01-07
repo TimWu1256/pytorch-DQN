@@ -6,7 +6,7 @@ from datetime import datetime
 from DQN import ActorNetwork
 from gym.wrappers import Monitor
 
-ENV_ID = 'CartPole-v1'
+ENV_ID = 'CartPole-v0'
 
 def inference(model_path, video_path):
     env = gym.make(ENV_ID)
@@ -35,21 +35,14 @@ def inference(model_path, video_path):
     return total_reward
 
 if __name__ == "__main__":
-    model_path = 'output/dqn/2023-12-24_19-17-29/model/CartPole-v1_dqn_20000_2023-12-24_19-17-29.pth'
+    model_path = 'output/2023-12-24_15-32-05/model/CartPole-v0_dqn_20000_2023-12-24_15-32-05.pth'
     
-    VERSION = model_path.split('/')[2]
-    OUT_PATH = Path(r'./output/dqn') / VERSION
+    VERSION = model_path.split('/')[1]
+    OUT_PATH = Path(r'./output') / VERSION
     VIDEO_PATH = OUT_PATH / 'video'
     OUT_PATH.mkdir(parents=True, exist_ok=True)
     VIDEO_PATH.mkdir(parents=True, exist_ok=True)
 
     video_dir = VIDEO_PATH / datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     
-    # inference(model_path, video_dir)
-
-    N = 10
-    reward_mean = 0
-    for _ in range(N):
-        reward_mean += inference(model_path, video_dir)
-    reward_mean /= N
-    print(f'Average total reward: {reward_mean}')
+    inference(model_path, video_dir)
